@@ -1,0 +1,1065 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Poppins:ital,wght@1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+/* Common for all */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+:root {
+    --text-color: #f5f5f5;
+    --hover-color: #12f7ff;
+    --bg-color: #0c0c0c;
+    --secon-bg-color: #131f2b;
+    --neon-box-shadow: 0 0 0.5rem #12f7ff;
+    --big-font: 2.5rem;
+    --normal-font: 2rem;
+    --h2-font: 3rem;
+    --font-neon-text-shadow: 0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3),
+        0 0 70px rgba(18, 247, 255, 0.3),
+        0 0 80px rgba(18, 247, 255, 0.3),
+        0 0 100px rgba(18, 247, 255, 0.3),
+        0 0 150px rgba(18, 247, 255, 0.3)
+}
+
+/*to manage the color of scollerbar of y axis*/
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secon-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--hover-color);
+    border-radius: 5rem;
+}
+
+/* ......................................................... */
+
+
+body {
+    font-family: "poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-top: 40px;
+}
+
+/* header part of css ...........................*/
+
+header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid transparent;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10%;
+    background-color: var(--bg-color);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+.logo::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0%;
+    transition: all ease 1s;
+    background-color: var(--hover-color);
+}
+.logo:hover::after{
+    width: 30%;
+}
+
+span {
+    color: var(--hover-color);
+    font-size:1.8rem;
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    color: var(--text-color);
+    font-weight: 700;
+    padding: 10px 20px;
+
+}
+
+.navlist a:hover {
+    color: var(--hover-color);
+    text-shadow: var(--font-neon-text-shadow);
+}
+
+/* ............................ */
+.navlist a.active {
+    color: var(--hover-color);
+}
+
+/* .............. */
+
+#menu-icon {
+    background: var(--hover-color);
+    color: var(--secon-bg-color);
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+
+/* section part of css .....................................................*/
+
+section {
+    padding: 100px 10%;
+}
+
+.home {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    /* help to make 2 seperate part (info+ image) */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    grid-gap: 4em;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-size: var(--big-font);
+    font-weight: bold;
+}
+
+.change-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.change-text h1 {
+    display: inline-flex;
+    margin: 0;
+    vertical-align: top;
+}
+
+.change-text h3 {
+    display: inline-block;
+}
+
+.home-content p {
+    color: var(--text-color);
+    line-height: 1.5;
+    word-spacing: 0.3rem;
+}
+
+.info-box {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: 2rem 0 2rem;
+}
+
+.info-box h5 {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.info-box span {
+    color: var(--text-color);
+    font-size: 0.7rem;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    height: 45px;
+}
+
+/* ............................... */
+.btn-box .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--hover-color);
+    color: var(--secon-bg-color);
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    box-shadow: var(--neon-box-shadow);
+    font-weight: 600;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 3px solid var(--hover-color);
+}
+
+.btn:hover {
+    color: var(--hover-color);
+}
+
+.btn::before {
+    content: "";
+    /* top: 0;
+    left: 0; */
+    position: absolute;
+    background: var(--bg-color);
+    z-index: -1;
+    width: 0%;
+    height: 100%;
+    transition: 0.4s;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+/* .................................... */
+.social-icons {
+    margin-top: 8rem;
+    display: flex;
+    width: 200px;
+    height: 40px;
+    justify-content: space-between;
+
+}
+
+.social-icons a {
+    display: inline-flex;
+    width: 50px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--hover-color);
+    color: var(--hover-color);
+    background-color: var(--bg-color);
+    box-shadow: 0 0 0.3rem var(--hover-color);
+    transition: 0.6s;
+    border-radius: 8px;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.social-icons a i {
+    font-size: 1.5rem;
+}
+
+/* ....................... */
+.social-icons a:hover {
+    color: var(--bg-color);
+}
+
+.social-icons a::before {
+    content: "";
+    position: absolute;
+    background: var(--hover-color);
+    z-index: -1;
+    width: 0%;
+    height: 100%;
+    transition: 0.4s;
+}
+
+.social-icons a:hover::before {
+    width: 100%;
+}
+
+/* ....................... */
+
+
+
+.home-image {
+    position: relative;
+}
+
+.img-box {
+    text-align: center;
+}
+
+.img-box img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.liquid-effect {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    z-index: -1;
+    top: 15%;
+    transform: translateY(50%);
+    transform: translateX(80%);
+}
+
+.liquid-effect:nth-child(2) {
+    filter: blur(50px);
+}
+
+
+/* About part of css .............................................*/
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2em;
+    background: var(--secon-bg-color);
+
+}
+
+.about .img-about {
+    text-align: center;
+    position: relative;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.about .img-about img {
+    max-width: 400px;
+    height: auto;
+}
+.about-content{
+    padding-left: 3rem;
+}
+.about-content span {
+    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.about-content h2 {
+    color: var(--hover-color);
+    font-size: var(--normal-font);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.about-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: .2rem;
+}
+
+.about-content p {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.info-about1,
+.info-about2,
+.info-about3 {
+    background: var(--bg-color);
+    font-style: 0.5rem;
+    position: absolute;
+    padding: 10px;
+    width: 120px;
+    height: 110px;
+
+    display: block;
+    border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
+    box-shadow: var(--neon-box-shadow);
+    border: 2px solid var(--hover-color);
+    outline: 3px solid var(--bg-color);
+    z-index: 100;
+    animation: morph 5s linear infinite;
+}
+
+.info-about2 {
+    left: 75%;
+    top:15%;
+}
+
+.info-about1 {
+    left: 1%;
+    top: 40%;
+}
+
+.info-about3 {
+    left: 75%;
+    top: 80%;
+}
+
+
+
+/* Services part of css ...............................................*/
+
+.main-text {
+    width: 100%;
+    margin-bottom: center;
+    text-align: center;
+    color: var(--normal-font);
+}
+
+.main-text h2 {
+    font-weight: 700;
+    font-size: var(--normal-font);
+    margin-bottom: 30px;
+    color: var(--hover-color);
+}
+
+.main-text span {
+    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2em;
+    flex-wrap: wrap;
+}
+
+.section-services .service-box {
+    flex: 1 1 18rem;
+    padding: 2rem 1rem 2rem;
+    text-align: center;
+    background: var(--secon-bg-color);
+    transition: transform 0.4s;
+    border-radius: 10px;
+}
+
+.service-btn {
+    width: auto;
+    justify-content: center;
+}
+
+.service-box:hover {
+    transform: translateY(-1rem);
+}
+
+.service-icon {
+    border: 2px solid var(--hover-color);
+    padding: 2rem;
+    display: flex;
+    background: var(--bg-color);
+    align-items: center;
+    font-size: 4rem;
+    border-radius: 50%;
+
+    position: relative;
+    color: var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+    outline: 4px solid var(--bg-color);
+}
+
+.service-box h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.service-box p {
+    margin: 0.5rem 0 1.5rem 0;
+    font-weight: 300;
+    letter-spacing: 1.3px;
+    /* color: */
+    line-height: 1.6rem;
+}
+
+
+
+/* Skills part of css ..................................................*/
+.skills {
+    background: var(--secon-bg-color);
+}
+
+.skill-main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 30px;
+    grid-column-gap: 50px;
+}
+
+.skill-bar {
+    margin-bottom: 3rem;
+}
+
+/* skills of left side */
+.skill-main h3 {
+    margin-bottom: 2rem;
+    font-size: var(--normal-font);
+    text-align: center;
+}
+
+.skill-left .skill-bar .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.skill-left .skill-bar .bar {
+    width: 100%;
+    height: 15px;
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.skill-bar .bar span {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background: var(--hover-color);
+    border-radius: 20px;
+    box-shadow: var(--neon-box-shadow);
+}
+
+.skill-bar .bar .html {
+    width: 80%;
+    animation: html 2s;
+}
+
+.skill-bar .bar .css {
+    width: 60%;
+    animation: css 3s;
+}
+
+.skill-bar .bar .javascript {
+    width: 65%;
+    animation: javascript 4s;
+}
+
+.skill-bar .bar .react {
+    width: 70%;
+    animation: react 5s;
+}
+
+.skill-bar .bar .python {
+    width: 50%;
+    animation: python 6s;
+}
+
+/* skills of right side */
+
+.professinal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.box {
+    margin: 10px 0;
+    flex: 1 1 15rem;
+    position: relative;
+}
+
+.box .text {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.box .text big {
+    font: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box .text small {
+    display: block;
+    font-weight: 600;
+}
+
+.circle {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid var(--text-color); */
+}
+
+.circle .point {
+    width: 3.5px;
+    height: 10px;
+    background-color: var(--bg-color);
+    position: absolute;
+    border-radius: 3px;
+
+    transform: rotate(calc(var(--i)*var(--rot))) translateY(-45px);
+}
+
+.point.marked {
+    animation: glow 0.05s linear forwards;
+    animation-delay: calc(var(--i)*0.06s);
+}
+
+
+
+/*  PortFolio part of css................................................. */
+
+.filter-btn {
+    margin: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.filter-btn .btn {
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--hover-color);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: 2rem;
+    color: var(--text-color);
+}
+
+.filter-btn .btn:hover {
+    color: var(--hover-color);
+}
+
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 2rem;
+}
+
+.port-box {
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    grid-template-rows: 1fr auto;
+    background: var(--bg-color);
+    align-items: center;
+    border: 2px solid var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+
+    position: relative;
+}
+
+.port-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.port-image img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5s;
+    transition: 0.5s;
+}
+
+.port-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), var(--hover-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: 0.5s;
+    padding: 0.2rem;
+}
+
+/* imp note thats */
+.port-box:hover .port-content {
+    opacity: 1;
+}
+
+.port-box:hover .port-image img {
+    transform: scale(1.1);
+}
+
+/* /////////////////////////// */
+
+.port-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* color: black; */
+}
+
+.port-content p {
+    font-size: 0.8rem;
+    margin: 5px 0 15px 0;
+}
+
+.port-content a {
+    background: var(--text-color);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--hover-color);
+    outline: 3px solid var(--text-color);
+}
+
+.port-content a i {
+    font-size: 1.2rem;
+    color: var(--secon-bg-color);
+}
+
+/* Contact part of css .............................................*/
+
+.contact {
+    background: var(--secon-bg-color);
+    width: 100%;
+}
+
+.contact form {
+    text-align: center;
+    max-width: 50rem;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
+}
+
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    color: var(--text-color);
+    background: var(--bg-color);
+    margin-bottom: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.formBtn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.formBtn .btn {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+
+/* Footer section css .................................................... */
+
+footer {
+    padding: 1rem 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer p {
+    color: var(--text-color);
+}
+
+footer a {
+    display: inline-flex;
+    justify-content: center;
+    /* color: var(--bg-color); */
+    background: var(--hover-color);
+    padding: 0.6rem;
+    border-radius: 5px;
+}
+
+footer a {
+    font-size: 1rem;
+    color: var(--secon-bg-color);
+}
+
+
+
+.scroll-scale{
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 3s;
+}
+.scroll-bottom{
+    opacity: 0;
+    transform: translateY(300px);
+    transition: 3s;
+}
+.scroll-top{
+    opacity: 0;
+    transform: translateX(-300px);
+    transition: 3s;
+}
+
+.show-items{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @ keyframe section .................................................... */
+
+/* for service section  */
+@keyframes morph {
+
+    0%,
+    20% {
+        border-radius: 30% 58% 60% 41% / 58% 40% 50% 30%;
+    }
+
+    40% {
+        border-radius: 100% 91% 76% 64% / 30% 40% 60% 80%;
+    }
+
+    60% {
+        border-radius: 20% 63% 33% 44% / 82% 93% 74% 61%;
+    }
+
+    100% {
+        border-radius: 60% 39% 66% 100% / 91% 50% 80% 29%;
+    }
+}
+
+/* for skill section  */
+@keyframes html {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+@keyframes css {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+@keyframes javascript {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 65%;
+    }
+}
+
+@keyframes react {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 65%;
+    }
+}
+
+@keyframes python {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+/* skills - professional  */
+@keyframes glow {
+    0% {
+        background: var(--bg-color);
+        box-shadow: none;
+    }
+
+    100% {
+        background: var(--hover-color);
+        box-shadow: var(--neon-box-shadow);
+    }
+}
+
+
+
+/* Breake Point Of full Page - Making Full Responsive */
+
+@media(max-width:991px) {
+
+    header.sticky {
+        padding: 15px 5% !important;
+    }
+
+    footer {
+        padding: 15px 5%;
+    }
+
+    section {
+        padding: 50px 5%;
+    }
+
+    .navlist a {
+        padding: 8px 15px;
+    }
+
+    :root {
+        --big-font: 2.2rem;
+        --normal-font: 2rem;
+        --neon-box-shadow: 0 0 0.8rem #12f7ff;
+        --h2-font: 3rem;
+    }
+
+    .home-content {
+        margin-top: 5rem;
+    }
+
+    .social-icons {
+        margin-top: 2rem;
+    }
+}
+
+@media(max-width:768px) {
+    #menu-icon {
+        display: block;
+        transition: all 0.4s ease;
+    }
+
+    #menu-icon.bx-x {
+        transform: rotate(-180deg);
+    }
+
+    .navlist {
+        display: flex;
+        position: absolute;
+        top: -1000px;
+        right: 0;
+        flex-direction: column;
+        background: var(--bg-color);
+        text-align: left;
+        padding: 0 5%;
+        transition: all 0.45s ease;
+    }
+
+    .navlist a {
+        display: block;
+        padding-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .navlist.open {
+        top: 100%;
+    }
+    .home{
+        grid-template-columns: 1fr;
+    }
+    .home-image{
+        margin-top: 5rem;
+    }
+    .liquid-effect{
+        width: 80%;
+        left: 10%;
+        top: 15%;
+    }
+    .about{
+        flex-direction: column-reverse;
+    }
+    .skill-main{
+        grid-template-columns: 1fr;
+    }
+    .filter-btn{
+        margin: 2.5rem 0;
+    }
+    footer p{
+        font-size: 0.8rem;
+    }
+}
+
+
+@media(max-width:420px){
+    html{
+        font-size: 80%;
+    }
+    footer p{
+        font-size: 0.6rem;
+    }
+    .filter-btn .btn{
+        font-size: 0.8rem;
+    }
+    .img-about img{
+        /* height: auto; */
+        width: 300px;
+    }
+    .info-about1 .info-about2 .info-about3{
+        display: none;
+    }
+    .img-about{
+        font-size: 1rem;
+    }
+}
